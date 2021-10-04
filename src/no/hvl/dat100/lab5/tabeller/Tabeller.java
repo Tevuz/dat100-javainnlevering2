@@ -32,8 +32,9 @@ public class Tabeller {
 	// d)
 	public static boolean finnesTall(int[] tabell, int tall) {
 		for (int i : tabell) {
-			if (i == tall)
+			if (i == tall) {
 				return true;
+			}
 		}
 		return false;
 	}
@@ -41,45 +42,41 @@ public class Tabeller {
 	// e)
 	public static int posisjonTall(int[] tabell, int tall) {
 		for (int i = 0; i < tabell.length; i++) {
-			if (tabell[i] == tall)
+			if (tabell[i] == tall) {
 				return i;
+			}
 		}
 		return -1;
 	}
 
 	// f)
 	public static int[] reverser(int[] tabell) {
-		tabell = tabell.clone();
-		for (int i = 0; i < (tabell.length - 1) / 2; i++) {
-			int t = tabell[i];
-			tabell[i] = tabell[tabell.length - i - 1];
-			tabell[tabell.length - i - 1] = t;
+		int[] resultat = new int[tabell.length];
+		for (int i = 0; i < tabell.length; i++) {
+			resultat[i] = tabell[tabell.length - i - 1];
 		}
-		return tabell;
+		return resultat;
 	}
 
 	// g)
 	public static boolean erSortert(int[] tabell) {
-		if (tabell.length <= 1)
-			return true;
-		for (int i = 1; i < tabell.length; i++) {
-			if (tabell[i] < tabell[i - 1])
-				return false;
-		}
-		return true;
+		boolean sortert = true;
+		for (int i = 1; sortert && i < tabell.length; i++)
+			sortert &= tabell[i - 1] <= tabell[i];
+		
+		return sortert;
 	}
 
 	// h)
 	public static int[] settSammen(int[] tabell1, int[] tabell2) {
 		int[] resultat = new int[tabell1.length + tabell2.length];
-		int i = 0;
 
+		int i = 0;
 		for (int j = 0; j < tabell1.length; j++)
 			resultat[i++] = tabell1[j];
-
 		for (int j = 0; j < tabell2.length; j++)
 			resultat[i++] = tabell2[j];
-		
+
 		return resultat;
 	}
 }

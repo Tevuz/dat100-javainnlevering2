@@ -3,5 +3,5 @@
 - JPLab 5: Oppgave O1-A (https://github.com/dat100hib/dat100public/blob/master/programmering/jplab5/JP5.md#obligatoriske-oppgave-o1-a)
 - JPLab 6: Oppgave O1-B (https://github.com/dat100hib/dat100public/blob/master/programmering/jplab6/JP6.md#obligatoriske-oppgave-o1-b)
 
-![alt text](JUnitTabeller.png "JUnitTabeller.png") 
-![alt text](JUnitMatriser.png "JUnitMatriser.png")
+![JUnitTabeller.png](doc/JUnitMatriser.png) 
+![JUnitMatriser.png](doc/JUnitMatriser.png)

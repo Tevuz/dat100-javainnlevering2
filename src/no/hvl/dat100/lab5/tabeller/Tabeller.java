@@ -27,6 +27,21 @@ public class Tabeller {
 		for (int i : tabell)
 			sum += i;
 		return sum;
+		
+		/*
+		int sum = 0;
+		for (int i = 0; i < tabell.length; i++) {
+			sum += tabell[i];
+		}
+		return sum;
+		
+		int sum = 0;
+		int i = 0;
+		while (i < tabell.length) {
+			sum += tabell[i++];
+		}
+		return sum; 
+		*/
 	}
 
 	// d)

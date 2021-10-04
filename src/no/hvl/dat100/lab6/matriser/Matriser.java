@@ -6,62 +6,90 @@ public class Matriser {
 
 	// a)
 	public static void skrivUt(int[][] matrise) {
-		System.out.println(tilStreng(matrise));
+		
+		for (int[] rad: matrise) {
+			for (int plass: rad) {
+				System.out.print(plass + " ");
+			}
+			System.out.println();
+		}
 	}
 
 	// b)
 	public static String tilStreng(int[][] matrise) {
-		StringBuilder builder = new StringBuilder();
-		for (int i = 0; i < matrise.length; i++) {
-			for (int j = 0; j < matrise[0].length; j++) {
-				builder.append(matrise[i][j]);
-				builder.append(" ");
+		
+		String matriseString = "";
+		
+		for (int[] rad: matrise) {
+			for (int plass: rad) {
+				if (plass%rad.length==0) {
+					matriseString += plass + " \n";
+				} else {
+					matriseString += plass + " ";
+				}
+				
 			}
-			builder.append("\n");
+			
 		}
-		return builder.toString();
-
+		return matriseString;
+		
 	}
 
 	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
+		
+		int[][] skalert = matrise;
+		
 		for (int i = 0; i < matrise.length; i++) {
 			for (int j = 0; j < matrise[i].length; j++) {
-				matrise[i][j] *= tall;
+				int nyttTall = matrise[i][j]*tall;
+				skalert[i][j] = nyttTall;
 			}
 		}
-		return matrise;
+		return skalert;
+	
 	}
 
 	// d)
 	public static boolean erLik(int[][] a, int[][] b) {
-		if (a.length != b.length)
-			return false;
 
+		boolean erLik = false;
+		
 		for (int i = 0; i < a.length; i++) {
-			if (a[i].length != b[i].length)
-				return false;
-			for (int j = 0; j < a[0].length; j++) {
-				if (a[i][j] != b[i][j])
-					return false;
+			for (int j = 0; j < a[i].length; j++) {
+				if (a[i][j]==b[i][j]) {
+					erLik = true;
+				} else {
+					erLik = false;
+				}
 			}
 		}
-
-		return true;
+		return erLik;
 	}
-
+	
 	// e)
 	public static int[][] speile(int[][] matrise) {
 
-		// TODO
-		throw new UnsupportedOperationException("speile ikke implementert");
-
+		
 	}
+	
 
 	// f)
 	public static int[][] multipliser(int[][] a, int[][] b) {
 
-		// TODO
-		throw new UnsupportedOperationException("speile ikke implementert");
+		int[][] multiplisert = new int[a.length][a[0].length];
+		int pos = 0;
+		
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a[0].length; j++) {
+				multiplisert[i][j] = 0;
+				for(int k = 0; k < a.length; k++) {
+					multiplisert[i][j] += a[i][k]*b[k][j];
+				}
+			}
+		}
+		
+		return multiplisert;
+	
 	}
 }

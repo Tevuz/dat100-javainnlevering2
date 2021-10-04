@@ -1,7 +1,5 @@
 package no.hvl.dat100.lab6.matriser;
 
-import no.hvl.dat100.lab5.tabeller.Tabeller;
-
 public class Matriser {
 
 	// a)
@@ -65,10 +63,12 @@ public class Matriser {
 
 	// f)
 	public static int[][] multipliser(int[][] a, int[][] b) {
+		if (a.length != b[0].length || a[0].length != b.length)
+			return null;
 		int[][] resultat = new int[a.length][b.length];
 		for (int i = 0; i < resultat.length; i++) {
 			for (int j = 0; j < resultat.length; j++) {
-				for (int k = 0; k < a[i].length && k < b.length; k++) {
+				for (int k = 0; k < resultat[i].length; k++) {
 					resultat[i][j] += a[i][k] * b[k][j];
 				}
 			}
